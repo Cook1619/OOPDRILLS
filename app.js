@@ -30,22 +30,22 @@ class Person {
         this.location = location;
     }
     greet(){
-        alert(`Hello, my name is ${this.name}, I am ${this.age} years old, and live in ${location}.`)
+        alert(`Hello, my name is ${this.name}, I am ${this.age} years old, and live in ${this.location}.`)
     }
 }
 
-let person1 = new Person('Danelle', 'Mayer', 32);
-erson1.greet()
+let person1 = new Person('Danelle', 32,'Mayer');
+person1.greet()
 
-let person2 = new Person('Mike', 'Montrose', 30);
+let person2 = new Person('Mike', 30, 'Montrose');
 person2.greet()
 
-let person3 = new Person('Aaron', 'Cedar City', 29);
+let person3 = new Person('Aaron', 29, 'Cedar City');
 person3.greet()
 
-let person4 = new Person('Ahmed', 'Plymouth', 31);
+let person4 = new Person('Ahmed', 31, 'Plymouth');
 person4.greet();
-let person5 = new Person('Mike', 'Albertville', 31);
+let person5 = new Person('Mike', 31, 'Albertville');
 person5.greet()
 
 
@@ -71,3 +71,31 @@ person5.greet()
 //     }
 // }
 // console.log(person5.sayhello());
+
+class Vehicle {
+    constructor(manufacturer, numberOfWheels){
+        this.manufacturer = manufacturer;
+        this.numberOfWheels = numberOfWheels;
+    }
+    aboutVehicle(){
+        console.log(`This is vehicle is made by ${this.manufacturer} and has ${numberOfWheels}.`)
+    }
+}
+
+class Truck extends Vehicle{
+    constructor(manufacturer, numberOfWheels, numberOfDoors, truckBed){
+        super(manufacturer, numberOfWheels);
+        this.numberOfDoors = numberOfDoors;
+        this.truckBed = truckBed;
+    }
+    aboutVehicle(){
+        console.log(`This vehicle is a truck, and is a ${this.manufacturer} and has ${this.numberOfWheels} of wheels, ${this.numberOfDoors}, and has a truck bed ${this.truckBed}.`)
+    }
+}
+t1 = new Truck("Ford", 4, 2, true);
+t1.aboutVehicle();
+class Sedan extends Vehicle {
+    constructor(){
+        super()
+    }
+}
