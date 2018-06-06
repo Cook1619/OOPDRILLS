@@ -1,4 +1,4 @@
-
+// //Old way
 // function Person (name, city, age){
 //     this.name = name;
 //     this.city = city;
@@ -10,20 +10,43 @@
 // }
 
 // let person1 = new Person('Danelle', 'Mayer', 32);
-// console.log(person1.greet());
+// erson1.greet()
 
 // let person2 = new Person('Mike', 'Montrose', 30);
-// console.log(person2.greet());
+// person2.greet()
 
 // let person3 = new Person('Aaron', 'Cedar City', 29);
-// console.log(person3.greet());
+// person3.greet()
 
 // let person4 = new Person('Ahmed', 'Plymouth', 31);
-// console.log(person4.greet());
+// person4.greet();
 // let person5 = new Person('Mike', 'Albertville', 31);
-// console.log(person5.greet());
+// person5.greet()
+//New Way
+class Person {
+    constructor(name, age, location){
+        this.name = name;
+        this.age = age;
+        this.location = location;
+    }
+    greet(){
+        alert(`Hello, my name is ${this.name}, I am ${this.age} years old, and live in ${location}.`)
+    }
+}
 
+let person1 = new Person('Danelle', 'Mayer', 32);
+erson1.greet()
 
+let person2 = new Person('Mike', 'Montrose', 30);
+person2.greet()
+
+let person3 = new Person('Aaron', 'Cedar City', 29);
+person3.greet()
+
+let person4 = new Person('Ahmed', 'Plymouth', 31);
+person4.greet();
+let person5 = new Person('Mike', 'Albertville', 31);
+person5.greet()
 
 
 
