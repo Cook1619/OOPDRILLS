@@ -89,7 +89,7 @@ class Truck extends Vehicle{
         this.truckBed = truckBed;
     }
     aboutVehicle(){
-        console.log(`This vehicle is a truck, and is a ${this.manufacturer} and has ${this.numberOfWheels} of wheels, ${this.numberOfDoors}, and has a truck bed ${this.truckBed}.`)
+        console.log(`This vehicle is a truck, and is a ${this.manufacturer} and has ${this.numberOfWheels} of wheels, ${this.numberOfDoors} doors, and has a truck bed ${this.truckBed}.`)
     }
 }
 t1 = new Truck("Ford", 4, 2, true);
@@ -97,15 +97,27 @@ t1.aboutVehicle();
 
 class Sedan extends Vehicle {
     constructor(manufacturer, numberOfWheels, numberOfDoors, size, mpg){
-        super(size, mpg)
+        super(manufacturer, numberOfWheels);
         this.size = size;
         this.mpg = mpg;
     }
-}
-
-class Motorcycles extends Vehicle{
-    constructor(manufacturer, numberOfWheels, handlebars){
-        super(handlebars)
-        this.handlebars = handlebars;
+    aboutVehicle(){
+        console.log(`This vehicle is a sedan, it is of size ${this.size}, gets ${this.mpg} miles per gallon, has ${this.numberOfDoors} doors,${this.numberOfDoors} doors, and is made by ${this.manufacturer}.`)
     }
 }
+s1 = new Sedan("Honda", 4, 4, "medium", 37);
+s1.aboutVehicle();
+
+class Motorcycles extends Vehicle{
+    constructor(manufacturer, numberOfWheels, handlebars, steeringWheel, doors){
+        super(manufacturer, numberOfWheels);
+        this.handlebars = handlebars;
+        this.steeringWheel = steeringWheel;
+        this.doors = doors;
+    }
+    aboutVehicle(){
+        console.log(`This is a motorcycle, made by ${this.manufacturer}, has ${this.numberOfWheels} wheels, has handlebars ${this.handlebars}, is there a steeringwheel present? ${this.steeringWheel} and are there doors present? ${this.doors}.`)
+    }
+}
+m1 = new Motorcycles("Harley", 2, true, false, false);
+m1.aboutVehicle();
