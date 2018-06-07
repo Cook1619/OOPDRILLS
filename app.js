@@ -94,8 +94,18 @@ class Truck extends Vehicle{
 }
 t1 = new Truck("Ford", 4, 2, true);
 t1.aboutVehicle();
+
 class Sedan extends Vehicle {
-    constructor(){
-        super()
+    constructor(manufacturer, numberOfWheels, numberOfDoors, size, mpg){
+        super(size, mpg)
+        this.size = size;
+        this.mpg = mpg;
+    }
+}
+
+class Motorcycles extends Vehicle{
+    constructor(manufacturer, numberOfWheels, handlebars){
+        super(handlebars)
+        this.handlebars = handlebars;
     }
 }
